@@ -1,12 +1,13 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-def home(request):
-    return HttpResponse("")
 
-def hakkimizde(request):
-    return HttpResponse("hakkımızda sayfası")
+def index(request):      
+    return render(request, 'pages/index.html')
 
-def iletisim(request):
-    return HttpResponse("iletişim sayfası")
+def about(request):
+    return render(request, 'pages/about.html')
+
+def contact(request):
+    return render(request, 'pages/contact.html')
 
