@@ -6,23 +6,19 @@ data = {
     "programlama": "programlama kategorisine ait kurslar",
     "web-gelistirme": "webgeliştirme kategorisine ait kurslar",
     "mobil": "mobil kategorisine ait kurslar",
-    }
+    "backend": "backend kategorisine ait kurslar", 
+}
 
 def index(request):
-    return render(request, 'courses/index.html')
+    # list_items = ""
 
-def kurslar(request):
-    list_items = ""
-
-    category_list = list(data.keys())
+    # category_list = list(data.keys())
     
-    for category in category_list:
-        redirect_url = reverse('courses_by_category', args=[category])
-        list_items += f"<li><a href='{redirect_url}>{category}</a></li>"
-       
-    html = f"<ul>{list_items}</ul"
-
-    return HttpResponse(html)
+    # for category in category_list:
+    #     redirect_url = reverse('courses_by_category', args=[category])
+    #     list_items += f"<li><a href='{redirect_url}>{category}</a></li>"   
+  
+    return render(request, 'courses/index.html/')
 
 def details(request, kurs_name):
     return HttpResponse(f"{kurs_name} detay sayfası")
@@ -30,7 +26,7 @@ def details(request, kurs_name):
 def getCoursesByCategory(request, category_name): 
     try:
         category_text = data[category_name]
-        return HttpResponse(category_text)
+        return render(request, 'courses/courses.html', {'category' : category_name, 'category_text': category_text})
     except:
         return HttpResponseNotFound("Kategori bulunamadı")
 

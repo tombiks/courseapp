@@ -1,6 +1,26 @@
 {% extends "layout.html" %}
 
+{% block css_files %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+{% endblock  %}
+
+{% block page_title %}Home{% endblock %}
+
 {% block content %}
-    <h1>kurslar</h1>
+    <div class="container mt-4">
+            <div class="row">
+            <!--Menu-->
+                {% include "courses/partials/_categories.html" %} 
+            <!--Menu ending-->
+            <!--Content-->                            
+            <div class="col-7"> 
+                <h1>AnaSayfa</h1>
+                <i class="fa-solid fa-house"></i>
+            </div> 
+            <!--Content ending-->      
+        </div>
+    </div>     
 {% endblock content %}
+
+{% block js_files %}{% endblock %}
 

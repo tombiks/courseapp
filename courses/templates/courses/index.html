@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block page_title %}Kurslar{% endblock page_title %}
+
+{% block content %}
+    <div class="container mt-3">
+        <div class="row">            
+            {% include "courses/partials/_categories.html" %}           
+            <div class="col-7">
+                <!--content-->
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
